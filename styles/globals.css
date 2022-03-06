@@ -1,9 +1,15 @@
 html,
 body {
+  background: black;
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    color: #fff;
+}
+
+html{
+  scroll-behavior: smooth;
 }
 
 a {
@@ -13,4 +19,8 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+li:hover{
+  border-color: pink !important;
 }
