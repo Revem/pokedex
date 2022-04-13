@@ -1,7 +1,9 @@
 import Head from "next/head";
 import Link from "next/link";
 
+
 export async function getStaticProps(context) {
+  
   const pokemons = await fetch("https://pokeapi.co/api/v2/pokedex/1/")
     .then((respostaDoServer) => {
       if (respostaDoServer.ok) {
@@ -20,12 +22,14 @@ export async function getStaticProps(context) {
 }
 
 export default function Home(props) {
+
   const { pokemons } = props;
+  
 
   return (
     <div>
       <Head>
-        <title >Pokedex</title>
+        <title >({pokemons.length}) Pokedex</title>
       </Head>
       <h1 style={{margin: '0 auto', textAlign: 'center'}}>Pokedex</h1>
       <ul style={{borderStyle: 'solid', width: '95%', margin:'0 auto', display:'grid', gridTemplateColumns: '30% 30% 30%', borderRadius:'0.25rem', borderWidth:'1px', borderColor:`rgb(145, 31, 173)`}}>
