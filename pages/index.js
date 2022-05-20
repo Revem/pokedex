@@ -1,7 +1,9 @@
 import Head from "next/head";
 import Link from "next/link";
 
+
 export async function getStaticProps(context) {
+  
   const pokemons = await fetch("https://pokeapi.co/api/v2/pokedex/1/")
     .then((respostaDoServer) => {
       if (respostaDoServer.ok) {
@@ -20,12 +22,14 @@ export async function getStaticProps(context) {
 }
 
 export default function Home(props) {
+
   const { pokemons } = props;
+  
 
   return (
     <div>
       <Head>
-        <title >Pokedex</title>
+        <title >({pokemons.length}) Pokedex</title>
       </Head>
       <h1>Pokedex</h1>
       <ul className="flex flex-wrap w-full p-5 break-all">
