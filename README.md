@@ -18,3 +18,10 @@ E então acessar a **URL** gerada pelo próprio yarn.
 ### O projeto
 
 O projeto em seu estado atual exibe o nome e o número de cada **Pokémon** existente no universo **Pokémon**, porém em breve serão adicionadas novas funcionalidades como ataques, tipos e onde encontrar determinado **Pokémon**
+
+### Todo
+
+Ainda é necessário estar criando várias coisas para esse projeto se tornar um projeto completo, no momento, meus principais objetivos são:
+
+Adicionar um **Search Filter**
+Adicionar **Informações sobre cada Pokémon**
