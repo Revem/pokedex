@@ -1,30 +1,27 @@
 import Link from "next/link";
 
-export default function Pokemon({ pokemon }) {
+export default function Pokemon({ pokemon}) {
   console.log(pokemon);
   return (
     <div>
-      Id: {pokemon.id}
-      Nome: {pokemon.name}
-      <img src={pokemon.sprites.front_default}  alt="Imagem de um pokémon" />
-      <img src={pokemon.sprites.front_shiny} alt="Imagem de um pokémon" />
-
+      Id: {pokemon.id} <br />
+      Nome: {pokemon.name} <br />
+      Descrição: {pokemon.flavor_text_entries[7].flavor_text} <br />
       <Link href='../'><a>Voltar para o inicio</a></Link>
     </div>
   );
 }
 
+
 export async function getStaticProps({ params }) {
-  const pokemon = await fetch(`https://pokeapi.co/api/v2/pokemon/${params.id}`)
+  const pokemon = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${params.id}`)
     .then((respostaDoServer) => {
       if (respostaDoServer.ok) {
         return respostaDoServer.json();
       }
-
       throw new Error('Deu problema');
     })
     .then((respostaEmObjeto) => respostaEmObjeto);
-
   return {
     props: {
       pokemon,
