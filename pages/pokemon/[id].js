@@ -6,6 +6,9 @@ export default function Pokemon({ pokemon}) {
     <div>
       Id: {pokemon.id} <br />
       Nome: {pokemon.name} <br />
+      <img
+                className="w-23 h-23"
+                 src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png`} />
       Descrição: {pokemon.flavor_text_entries[7].flavor_text} <br />
       <Link href='../'><a>Voltar para o inicio</a></Link>
     </div>
